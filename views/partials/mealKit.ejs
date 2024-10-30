@@ -1,0 +1,25 @@
+<head>
+    <link rel="stylesheet" href="/css/mealKit.css">
+</head>
+
+<div class="meal-kit-card">
+    <div class="banner-image"> 
+    <img src="/mealKit-pic/<%= mealKit.imageUrl %>" alt="<%= mealKit.title %>">
+    </div>
+    <div class="meal-kit-details">
+        <h1><%= mealKit.title %></h1>
+        <p>Includes:<%= mealKit.includes %></p>
+        <p>Description:<%= mealKit.description %></p>
+        <p>Price($)<%= mealKit.price.toFixed(2) %></p>
+        <p>Cooking time:<%= mealKit.cookingTime %>mins</p>
+        <p>Serving:<%= mealKit.servings %></p>
+         <!-- Add Buy button for customers only -->
+    <% if (user && role === 'customer') { %>
+        <div class="button-wrapper"> 
+        <button class="button-8" onclick="window.location.href='/add-mealKit/<%= mealKit._id %>'">Buy</button>
+      </div>
+       
+    <% } %>
+    </div>
+</div>
+

@@ -1,0 +1,80 @@
+
+<head>
+    
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping Cart</h2>
+        <% if (typeof message === "string" && message.length > 0) { %>
+            <h3 style="color: red;"><%= message %></h3>
+        <% } %>
+
+        <% if (!hasMealKits) { %>
+            <h2>You don't have anything in the shopping cart.</h1>
+        <% } %>
+
+        <% if (typeof hasMealKits === "boolean" && hasMealKits) { %>
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">Index</div>
+                    <div class="col col-2">Image</div>
+                    <div class="col col-3">Title</div>
+                    <div class="col col-4">Includes</div>
+                    <div class="col col-5">Price</div>
+                    <div class="col col-6">Quantity</div>
+                    <div class="col col-7">Total</div>
+                    <div class="col col-8">Action</div>
+                </li>
+                <% if (typeof mealKits === "object" && mealKits.constructor === Array) { %>
+                    <% mealKits.forEach((m,index) => { %>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Index"><%= index+1 %></div>
+                            <div class="col col-2" data-label="Image"><img src="/mealKit-pic/<%= m.mealKit.imageUrl %>" style="width: 100px; height: auto;" alt="<%= m.mealKit.title %>"></div>
+                            <div class="col col-3" data-label="Title"><%= m.mealKit.title %></div>
+                            <div class="col col-4" data-label="Includes"><%= m.mealKit.includes %></div>
+                            <div class="col col-5" data-label="Price">$<%= m.mealKit.price %></div>
+                            <div class="col col-6" data-label="Quantity">
+                                <form action="/update-quantity/<%= m.id %>" method="post">
+                                    <input type="number" name="qty" value="<%= m.qty %>" min="0" onchange="this.form.submit()" />
+                                </form>
+                            </div>
+                            <div class="col col-7" data-label="Total">$<%= (m.mealKit.price * m.qty).toFixed(2) %></div>
+                            <div class="col col-8" data-label="Action">
+                                <a href='/remove-mealKit/<%= m.id %>'><button class="remove-button">Remove</button></a>
+                            </div>
+                        </li>
+                    <% }) %>
+                <% } %>
+            </ul>
+        <% } %>
+    </div>
+    
+    <% if (hasMealKits) { %>
+    <div class="summary-section">
+        <table class="summary-table">
+            <tbody>
+                <tr>
+                    <td>Subtotal:</td>    
+                    <td>$<%= cartTotal.toFixed(2).toLocaleString() %></td>
+                </tr>
+
+                <tr>
+                    <td>Tax:</td>    
+                    <td>$<%= (cartTotal * 0.1).toFixed(2).toLocaleString() %></td>
+                </tr>
+
+                <tr>
+                    <td>Grand total:</td>    
+                    <td>$<%= (cartTotal * 1.1).toFixed(2).toLocaleString() %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="place-order-section">
+        <a href="/check-out" class="order-button">Place order</a>
+    </div>
+    <% } %>
+</body>
+

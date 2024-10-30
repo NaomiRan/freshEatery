@@ -1,0 +1,143 @@
+body {
+  font-family: 'lato', sans-serif;
+  
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align content vertically center */
+  margin-bottom: 25px;
+}
+
+.responsive-table .table-header {
+  background-color: #95A5A6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.responsive-table .table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+}
+
+.responsive-table .col-1 {
+  flex-basis: 10%;
+}
+
+.responsive-table .col-2 {
+  flex-basis: 20%;
+}
+
+.responsive-table .col-3 {
+  flex-basis: 10%; /* Adjusted from 30% to 25% */
+}
+
+.responsive-table .col-4 {
+  flex-basis: 10%; 
+}
+
+.responsive-table .col-5 {
+  flex-basis: 10%; 
+}
+
+.responsive-table .col-6 {
+  flex-basis: 20%; 
+}
+
+.responsive-table .col-7 {
+  flex-basis: 10%; 
+}
+
+.responsive-table .col-8 {
+  flex-basis: 10%; /* Adjusted from 10% to 5% */
+ 
+}
+
+.remove-button {
+  background-color: #ffb300;
+  color: #fff;
+  padding: 0.5em 1em; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+  
+}
+
+.remove-button:hover {
+  background-color: #45a049;
+}
+
+@media all and (max-width: 767px) {
+  .responsive-table .table-header {
+      display: none;
+  }
+
+  .responsive-table li {
+      display: block;
+  }
+
+  .responsive-table .col {
+      flex-basis: 100%;
+      display: flex;
+      padding: 10px 0;
+  }
+
+  .responsive-table .col:before {
+      color: #6C7A89;
+      padding-right: 10px;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+  }
+}
+
+.summary-section {
+  font-weight: 500;
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  margin-right:100px;
+}
+
+.summary-table {
+  border-collapse: collapse;
+  margin-right: 20px;
+}
+
+.place-order-section {
+  margin: 20px;
+  margin-right:120px;
+  text-align: right;
+}
+
+.order-button {
+  background-color: #ffb300;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  text-decoration: none;
+  
+}
+
+.order-button:hover {
+  background-color: #45a049;
+}
