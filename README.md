@@ -1,18 +1,9 @@
-# WEB322 Project (Winter 2024)
-
-I declare that this assignment is my own work in accordance with the Seneca Academic Policy.
-No part of this assignment has been copied manually or electronically from any other source
-(including web sites) or distributed to other students.
-
-Student Name  : Dongqin Ran
-Student Email : dran@myseneca.ca
-Course/Section: WEB322/NAA
+# Welcome to Fresh Eatery, your gateway to a healthier lifestyle! Build and customize web pages effortlessly with user-friendly platform, crafted with HTML, CSS, NodeJs, Express, and MongoDB. Experience the essence of freshness with our organic and healthy food delivery directly from the farm. Trace the journey from producer to your doorstep, ensuring transparency in every step. Whether you prefer cooking with a variety of fresh ingredients for full nutrition or opting for daily doorstep deliveries, Fresh Eatery is your go-to destination for a nourishing and convenient culinary experience.
 
 ## Project URLs
-GitHub Repo   : https://github.com/Naomi-Dongqin/WEB322
-Cyclic URL    : https://handsome-bear-buckle.cyclic.app
+GitHub Repo   : https://github.com/NaomiRan/freshEatery
+vercel URL    : https://fresh-eatery.vercel.app/
 
-http://localhost:8080/mealKits/add/
-http://localhost:8080/load-data/list
+
 
 
